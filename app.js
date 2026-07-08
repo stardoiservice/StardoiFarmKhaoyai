@@ -107,7 +107,7 @@ const translations = {
   'label-adults': { th: 'ผู้ใหญ่ | เด็ก(120 บาท/คน)', en: 'Adult | Child (120 THB/person)', zh: '成人 | 儿童 (120泰铢/人)', ja: '大人 | 子供 (120バーツ/人)' },
   'label-kids': { th: 'เด็ก เล็ก ฟรี (สูงไม่เกิน 120 ซม.)', en: 'Small Child FREE (under 120cm)', zh: '幼童 免费 (120厘米以下)', ja: '幼児 無料 (身長120cm以下)' },
   'label-addons': { th: 'แพ็กเกจเสริมสุดคุ้ม', en: 'Special Value Add-ons', zh: '超值附加服务', ja: '特別バリューオプション' },
-  'addon-feeding': { th: 'หญ้าและอาหารเม็ดแสนอร่อย (+100 บาท/คน)', en: 'Grass & Delicious Feed Pellets (+100 THB/person)', zh: '牧草和美味饲料颗粒 (+100 泰铢/人)', ja: '牧草と美味しいペレットエサ (+100 バーツ/人)' },
+  'addon-feeding': { th: 'อาหารสัตว์ (100 บาท/ชุด)', en: 'Animal Feed (100 THB/set)', zh: '动物饲料 (100泰铢/套)', ja: '動物の餌 (100バーツ/セット)' },
   'addon-cafe': { th: 'คูปองพายเรือ (+140 บาท/คน)', en: 'Kayak Voucher (+140 THB/person)', zh: '皮划艇体验券 (+140 泰铢/人)', ja: 'カヤックバウチャー (+140 バーツ/人)' },
   'addon-photo': { th: 'สิทธิ์กอดแกะถ่ายรูปใกล้ชิด VIP (+100 บาท/กลุ่ม)', en: 'VIP Close Sheep Hug & Photo Session (+100 THB/group)', zh: 'VIP 近距离拥抱羊群及拍照 (+100 泰铢/组)', ja: 'VIP 羊とのハグ＆写真撮影 (+100 バーツ/グループ)' },
   'label-total': { th: 'ยอดรวมทั้งสิ้น:', en: 'Estimated Total:', zh: '预估总计：', ja: 'お見積もり合計：' },
@@ -283,8 +283,19 @@ window.toggleLanguage = toggleLanguage;
 // ==========================================================================
 // 6. Ticket Estimator Calculator
 // ==========================================================================
+function updateSpinner(id, change) {
+  const input = document.getElementById(id);
+  if (input) {
+    let val = parseInt(input.value) || 0;
+    val += change;
+    if (val < parseInt(input.min || 0)) val = parseInt(input.min || 0);
+    input.value = val;
+    calculateTotal();
+  }
+}
+
 function initCalculator() {
-  const inputs = ['calcAdults', 'calcKids', 'addonFeeding', 'addonKayak', 'addonPhoto'];
+  const inputs = ['calcAdults', 'addonFeeding', 'addonPhoto'];
   inputs.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -299,7 +310,6 @@ function initCalculator() {
 function calculateTotal() {
   const adultsInput = document.getElementById('calcAdults');
   const addonFeeding = document.getElementById('addonFeeding');
-  const addonKayak = document.getElementById('addonKayak');
   const addonPhoto = document.getElementById('addonPhoto');
   const totalPriceEl = document.getElementById('totalPrice');
 
@@ -311,13 +321,11 @@ function calculateTotal() {
   let total = people * 120;
 
   // Add-ons calculations
-  if (addonFeeding && addonFeeding.checked) {
-    total += people * 100;
+  if (addonFeeding) {
+    const feedingSets = parseInt(addonFeeding.value) || 0;
+    total += feedingSets * 100;
   }
-  if (addonKayak && addonKayak.checked) {
-    total += people * 140;
-  }
-  if (addonPhoto && addonPhoto.checked && people > 0) {
+if (addonPhoto && addonPhoto.checked && people > 0) {
     total += 100;
   }
 
@@ -500,8 +508,7 @@ function initContactForm() {
 
 // Google Maps navigator external call
 window.openGoogleMaps = function() {
-  // Stardoi Sheep Farm simulated location coordinates near Khao Yai Pakchong
-  const url = "https://maps.google.com/?q=Stardoi+Sheep+Farm+Khao+Yai";
+  const url = "https://maps.google.com/?q=StardoiFarm+Khaoyai,+161+2,+Mu+Si,+Pak+Chong+District,+Nakhon+Ratchasima+30130";
   window.open(url, '_blank');
 };
 
