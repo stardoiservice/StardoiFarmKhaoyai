@@ -45,8 +45,13 @@
         <option value="night">🌌 Starry Night</option>
       </select>
       
-      <!-- Language Toggle Button -->
-      <button class="lang-btn" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">EN</button>
+      <!-- Language Selection Dropdown -->
+      <select class="custom-select" id="langSelect" aria-label="Select language" onchange="setLanguage(this.value)">
+        <option value="th">🇹🇭 TH</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="zh">🇨🇳 ZH</option>
+        <option value="ja">🇯🇵 JA</option>
+      </select>
     </div>
   </header>
 
