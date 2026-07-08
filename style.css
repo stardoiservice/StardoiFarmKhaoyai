@@ -20,7 +20,7 @@
   --text-muted: #4e6557;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.4);
-  --card-shadow: 0 8px 32px 0 rgba(43, 106, 74, 0.08);
+  --card-shadow: 0 15px 40px 0 rgba(43, 106, 74, 0.06);
   --nav-bg: rgba(255, 255, 255, 0.75);
   --nav-text: #1c3125;
   --transition-speed: 0.5s;
@@ -39,7 +39,7 @@
   --text-muted: #546e7a;
   --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(255, 255, 255, 0.5);
-  --card-shadow: 0 8px 32px 0 rgba(69, 90, 100, 0.06);
+  --card-shadow: 0 15px 40px 0 rgba(69, 90, 100, 0.05);
   --nav-bg: rgba(255, 255, 255, 0.65);
   --nav-text: #263238;
   --glow-color: rgba(144, 202, 249, 0.4);
@@ -57,7 +57,7 @@
   --text-muted: #4e6557;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.4);
-  --card-shadow: 0 8px 32px 0 rgba(43, 106, 74, 0.08);
+  --card-shadow: 0 15px 40px 0 rgba(43, 106, 74, 0.06);
   --nav-bg: rgba(255, 255, 255, 0.75);
   --nav-text: #1c3125;
   --glow-color: rgba(255, 184, 0, 0.3);
@@ -74,7 +74,7 @@
   --text-muted: #784212;
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.3);
-  --card-shadow: 0 8px 32px 0 rgba(160, 64, 0, 0.1);
+  --card-shadow: 0 15px 40px 0 rgba(160, 64, 0, 0.08);
   --nav-bg: rgba(255, 255, 255, 0.7);
   --nav-text: #4a1e00;
   --glow-color: rgba(255, 120, 31, 0.35);
@@ -91,7 +91,7 @@
   --text-muted: #9ca3af;
   --glass-bg: rgba(17, 24, 39, 0.7);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
   --nav-bg: rgba(11, 15, 25, 0.8);
   --nav-text: #f3f4f6;
   --glow-color: rgba(99, 102, 241, 0.4);
@@ -145,8 +145,8 @@ a {
    ========================================================================== */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
   box-shadow: var(--card-shadow);
@@ -164,17 +164,17 @@ a {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px var(--glow-color), 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
 }
 
 .btn-secondary {
@@ -194,7 +194,8 @@ a {
 .btn-secondary:hover {
   background-color: var(--primary-color);
   color: white !important;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(43, 106, 74, 0.2);
 }
 
 /* ==========================================================================
