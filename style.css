@@ -226,6 +226,28 @@ header {
   animation: bounce 3s infinite ease-in-out;
 }
 
+.logo-text {
+  font-family: 'Rye', cursive;
+  font-size: 1.1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #e8c370;
+  background-color: #1a3c28;
+  padding: 2px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(232, 195, 112, 0.5);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+
+.footer-logo-text {
+  font-family: 'Rye', cursive;
+  font-size: 1.1em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -1472,7 +1494,28 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    padding: 15px 20px;
+    padding: 10px 15px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-size: 1rem;
+    gap: 6px;
+  }
+  .logo-text, .footer-logo-text {
+    font-size: 0.85em;
+    padding: 2px 8px;
+    letter-spacing: 0.5px;
+  }
+  .logo-img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .controls {
+    gap: 8px;
+  }
+  .custom-select {
+    font-size: 0.75rem;
+    padding: 4px 8px;
   }
   nav {
     display: none; /* Can toggle in real mobile nav, keeping clean here */

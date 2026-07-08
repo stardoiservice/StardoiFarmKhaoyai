@@ -121,7 +121,7 @@ const translations = {
   'label-phone': { th: 'เบอร์โทรศัพท์', en: 'Phone Number', zh: '电话号码', ja: '電話番号' },
   'placeholder-phone': { th: 'กรุณากรอกเบอร์โทรศัพท์', en: 'Enter your phone number', zh: '请输入您的电话号码', ja: '電話番号を入力してください' },
   'label-msg': { th: 'ข้อความหรือคำถาม', en: 'Message / Special Requests', zh: '留言 / 特殊要求', ja: 'メッセージ / 特別なリクエスト' },
-  'placeholder-msg': { th: 'สอบถามเรื่องการจองเต็นท์ หรือแพ็กเกจหมู่คณะ...', en: 'Inquire about glamping reservations or group tours...', zh: '咨询露营预订或团体旅游...', ja: 'グランピング予約や団体ツアーについて問い合わせる...' },
+  'placeholder-msg': { th: 'สอบถามเรื่องการจอง หรือแพ็กเกจหมู่คณะ...', en: 'Inquire about glamping reservations or group tours...', zh: '咨询露营预订或团体旅游...', ja: 'グランピング予約や団体ツアーについて問い合わせる...' },
   'btn-send': { th: 'ส่งข้อมูลติดต่อ', en: 'Submit Inquiry', zh: '提交咨询', ja: 'お問い合わせを送信' },
   'map-placeholder-title': { th: 'แผนที่นำทาง Google Maps', en: 'Google Maps Navigation', zh: 'Google 地图导航', ja: 'Google マップ ナビゲーション' },
   'map-placeholder-desc': { th: 'คลิกปุ่มด้านล่างเพื่อเปิดแผนที่ในมือถือนำทางมายังฟาร์มทันที', en: 'Click the button below to navigate to the farm via Google Maps', zh: '点击下方按钮通过 Google 地图导航至农场', ja: '下のボタンをクリックしてGoogleマップで牧場へのナビを開く' },
