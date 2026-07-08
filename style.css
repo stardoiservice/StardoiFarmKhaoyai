@@ -117,16 +117,22 @@ html {
 body {
   font-family: 'Prompt', 'Outfit', sans-serif;
   background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-color);
   min-height: 100vh;
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.7;
+  transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+  word-break: keep-all; /* Keeps Thai words from breaking awkwardly */
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', 'Prompt', sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  line-height: 1.3;
+  text-wrap: balance; /* Beautiful heading wrapping */
 }
 
 a {
@@ -1497,6 +1503,7 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-hover);
 }
+
 
 /* ==========================================================================
    Responsive Media Queries
