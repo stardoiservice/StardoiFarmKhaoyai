@@ -20,6 +20,13 @@
 <body class="theme-sunny">
 
   <!-- ==========================================================================
+       Scroll Progress Bar
+       ========================================================================== -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==========================================================================
        Header & Navigation
        ========================================================================== -->
   <header>
@@ -64,6 +71,7 @@
     <div class="stars-overlay"></div>
     
     <div class="hero-content reveal">
+      <div id="smartGreeting" class="smart-greeting"></div>
       <span class="hero-tagline" data-translate="hero-tagline">สัมผัสความน่ารักท่ามกลางสายหมอกที่ เขาใหญ่</span>
       <h1 data-translate="hero-title">ฟาร์มแกะสตาร์ดอย</h1>
       <p data-translate="hero-desc">หลบหนีความวุ่นวายมาพักผ่อนในฟาร์มแกะสไตล์สวิสอัลไพน์ โอบล้อมด้วยขุนเขาเขียวขจีและบรรยากาศแสนอบอุ่น ผ่อนคลายไปกับคาเฟ่สุดคิวท์และเหล่าน้องแกะฟูนุ่ม</p>
@@ -382,10 +390,10 @@
         <h3 data-translate="calc-title">คำนวณราคาบัตรเข้าชม</h3>
         <p class="calc-subtitle" data-translate="calc-subtitle">วางแผนค่าใช้จ่ายล่วงหน้าและรับบัตรเข้าคิวพิเศษทันที</p>
         
-        <form class="calc-form" onsubmit="submitReservation(event)">
+        <div class="calc-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="calcAdults" data-translate="label-adults">ผู้ใหญ่ | เด็ก(120 บาท/คน)</label>
+              <label for="calcAdults" data-translate="label-adults">บัตรเข้าชมปกติ (120 บาท/ท่าน)</label>
               <div class="input-spinner">
                 <button type="button" class="spinner-btn" onclick="updateSpinner('calcAdults', -1)">-</button>
                 <input type="number" id="calcAdults" min="0" value="2" readonly>
@@ -423,9 +431,7 @@
               <span class="total-label" data-translate="total-currency"> บาท</span>
             </div>
           </div>
-          
-          <button type="submit" class="btn-primary" style="font-size: 1.1rem; padding: 15px;" data-translate="btn-estimate">จองสิทธิ์เข้าชมด่วน</button>
-        </form>
+          </div>
       </div>
     </div>
     
