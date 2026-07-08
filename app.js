@@ -570,3 +570,13 @@ function showSlides(n) {
 // Make slideshow functions globally accessible for HTML onclick attributes
 window.plusSlides = plusSlides;
 window.currentSlide = currentSlide;
+
+// Fix for LINE and other in-app browsers not starting at the top of the page
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 100); // Slight delay to override native browser automatic scroll jumps
+});
