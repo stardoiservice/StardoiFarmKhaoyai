@@ -240,6 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set up slideshow carousel
   initSlideshow();
+
+  // Set up Hero Parallax
+  initParallax();
 });
 
 // ==========================================================================
@@ -644,3 +647,27 @@ window.addEventListener('load', () => {
     window.scrollTo(0, 0);
   }, 100); // Slight delay to override native browser automatic scroll jumps
 });
+
+// ==========================================================================
+// 10. Hero Parallax Effect
+// ==========================================================================
+function initParallax() {
+  const hero = document.getElementById('hero') || document.querySelector('.hero');
+  const mist = document.querySelector('.mist-overlay');
+  const stars = document.querySelector('.stars-overlay');
+
+  if (!hero) return;
+
+  hero.addEventListener('mousemove', (e) => {
+    const { width, height, left, top } = hero.getBoundingClientRect();
+    const x = e.clientX - left - width / 2;
+    const y = e.clientY - top - height / 2;
+
+    if (mist) {
+      mist.style.transform = `translate(${x * 0.02}px, ${y * 0.02}px)`;
+    }
+    if (stars) {
+      stars.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
+    }
+  });
+}

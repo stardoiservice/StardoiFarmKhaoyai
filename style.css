@@ -662,6 +662,7 @@ section {
   aspect-ratio: 1 / 1;
   height: auto;
   overflow: hidden;
+  animation: float 3s infinite alternate ease-in-out;
 }
 
 .sheep-card-img {
@@ -1489,7 +1490,7 @@ footer {
 /* Fade-in scroll animations class */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -1619,4 +1620,9 @@ footer {
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+@keyframes float {
+  0% { transform: translateY(-5px); }
+  100% { transform: translateY(5px); }
 }
