@@ -6,6 +6,11 @@
   <meta name="description" content="ฟาร์มแกะสตาร์ดอย เขาใหญ่ (Stardoi Sheep Farm) - สัมผัสธรรมชาติสไตล์สวิสอัลไพน์ ป้อนอาหารแกะ ถ่ายรูปสวย และคาเฟ่แสนอบอุ่น">
   <meta name="keywords" content="ฟาร์มแกะเขาใหญ่, สตาร์ดอย, ที่เที่ยวเขาใหญ่, คาเฟ่เขาใหญ่, Stardoi Sheep Farm, Khao Yai">
   <meta name="author" content="Stardoi Sheep Farm">
+  <meta property="og:title" content="Stardoi Sheep Farm Khao Yai - ฟาร์มแกะสตาร์ดอย เขาใหญ่">
+  <meta property="og:description" content="สัมผัสธรรมชาติสไตล์สวิสอัลไพน์ ป้อนอาหารแกะ ถ่ายรูปสวย และคาเฟ่แสนอบอุ่น ที่เขาใหญ่">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cover.png">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
   
   <title>Stardoi Sheep Farm Khao Yai - ฟาร์มแกะสตาร์ดอย เขาใหญ่</title>
   
@@ -18,6 +23,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-sunny">
+
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-sheep">🐑</div>
+    <p>Loading Stardoi Farm...</p>
+  </div>
 
   <!-- ==========================================================================
        Scroll Progress Bar
@@ -35,7 +45,10 @@
       <span class="logo-text">Stardoi Farm Khaoyai</span>
     </a>
     
-    <nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-nav">
       <a href="#hero" data-translate="nav-home">หน้าแรก</a>
       <a href="#about" data-translate="nav-about">รู้จักสตาร์ดอย</a>
       <a href="#flock" data-translate="nav-flock">น้องแกะของเรา</a>
@@ -88,7 +101,7 @@
   <section id="about">
     <div class="about-container">
       <div class="about-img-wrapper reveal">
-        <img class="about-img" src="images/cover.png" alt="Stardoi Sheep Farm Landscape">
+        <img class="about-img" src="images/cover.png" alt="Stardoi Sheep Farm Landscape" loading="lazy">
         <div class="about-badge">
           <span data-translate="about-badge-val">ธรรมชาติ 100%</span>
           <span data-translate="about-badge-lbl">โอบล้อมด้วยขุนเขา</span>
@@ -135,7 +148,7 @@
       <!-- Mumu Card -->
       <div class="sheep-card glass-panel reveal" data-sheep-id="mumu">
         <div class="sheep-img-wrapper">
-          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Mumu Merino Sheep">
+          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Mumu Merino Sheep" loading="lazy">
         </div>
         <div class="sheep-card-content">
           <span class="sheep-card-tag" data-translate="flock-card-mumu-tag">สายกินจุ</span>
@@ -152,7 +165,7 @@
       <!-- Kero Card -->
       <div class="sheep-card glass-panel reveal" data-sheep-id="kero">
         <div class="sheep-img-wrapper">
-          <img class="sheep-card-img" src="images/star_sheep_kero.jpg" alt="Kero Corriedale Sheep" style="filter: hue-rotate(15deg);">
+          <img class="sheep-card-img" src="images/star_sheep_kero.jpg" alt="Kero Corriedale Sheep" style="filter: hue-rotate(15deg);" loading="lazy">
         </div>
         <div class="sheep-card-content">
           <span class="sheep-card-tag" data-translate="flock-card-Kero-tag">จอมซน</span>
@@ -169,7 +182,7 @@
       <!-- Coco Card -->
       <div class="sheep-card glass-panel reveal" data-sheep-id="coco">
         <div class="sheep-img-wrapper">
-          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Coco Brown Sheep" style="filter: sepia(0.6) saturate(1.2) contrast(1.1);">
+          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Coco Brown Sheep" style="filter: sepia(0.6) saturate(1.2) contrast(1.1);" loading="lazy">
         </div>
         <div class="sheep-card-content">
           <span class="sheep-card-tag" data-translate="flock-card-coco-tag">ดาวเด่นไอจี</span>
@@ -197,7 +210,7 @@
     <div class="activities-grid">
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Feed.jpg" alt="Feeding Sheep">
+          <img class="activity-img" src="images/Feed.jpg" alt="Feeding Sheep" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-1-title">ป้อนอาหารแกะอย่างใกล้ชิด</h3>
@@ -207,7 +220,7 @@
       
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Kayak1.jpg" alt="Kayaking">
+          <img class="activity-img" src="images/Kayak1.jpg" alt="Kayaking" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-2-title">พายเรือคายัค ผจญภัยน้ำผุดธรรมชาติ</h3>
@@ -217,7 +230,7 @@
 
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Alpaca.jpg" alt="Feeding Alpaca">
+          <img class="activity-img" src="images/Alpaca.jpg" alt="Feeding Alpaca" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-alpaca-title">ป้อนอาหารอัลปาก้าอย่างใกล้ชิด</h3>
@@ -227,7 +240,7 @@
 
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Rabbit1.jpg" alt="Feeding Rabbit">
+          <img class="activity-img" src="images/Rabbit1.jpg" alt="Feeding Rabbit" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-rabbit-title">ป้อนอาหารกระต่าย</h3>
@@ -237,7 +250,7 @@
 
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Horse.jpg" alt="Horseback Riding">
+          <img class="activity-img" src="images/Horse.jpg" alt="Horseback Riding" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-horse-title">ขี่ม้าชมวิว</h3>
@@ -247,7 +260,7 @@
 
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Carousel.jpg" alt="Carousel">
+          <img class="activity-img" src="images/Carousel.jpg" alt="Carousel" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-carousel-title">ม้าหมุน</h3>
@@ -257,7 +270,7 @@
 
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/Paint.jpg" alt="Painting">
+          <img class="activity-img" src="images/Paint.jpg" alt="Painting" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-paint-title">กิจกรรมระบายสีสร้างสรรค์</h3>
@@ -267,7 +280,7 @@
       
       <div class="activity-card glass-panel reveal">
         <div class="activity-img-wrapper">
-          <img class="activity-img" src="images/star_sheep_kero.jpg" alt="Photo with Sheep">
+          <img class="activity-img" src="images/star_sheep_kero.jpg" alt="Photo with Sheep" loading="lazy">
         </div>
         <div class="activity-content">
           <h3 class="activity-title" data-translate="act-photo-title">ถ่ายรูปกับน้องแกะ</h3>
@@ -280,7 +293,7 @@
     <div class="cafe-glamping-row">
       <div class="highlight-card glass-panel reveal">
         <div class="highlight-img-wrapper">
-          <img class="highlight-img" src="images/cafe_bakery.jpg" alt="Stardoi Cafe Bakery">
+          <img class="highlight-img" src="images/cafe_bakery.jpg" alt="Stardoi Cafe Bakery" loading="lazy">
         </div>
         <div class="highlight-content">
           <span class="highlight-tag" data-translate="act-3-tag">ห้ามพลาด</span>
@@ -296,7 +309,7 @@
           <p data-translate="act-4-p">เราบริหารจัดการฟาร์มด้วยระบบที่ทันสมัย ใส่ใจสิ่งแวดล้อมและสวัสดิภาพของสัตว์ (Animal Welfare) น้องแกะและสัตว์ทุกตัวได้รับการดูแลอย่างดีเยี่ยมด้วยความรัก เพื่อส่งมอบรอยยิ้มให้กับผู้มาเยือนทุกคน</p>
         </div>
         <div class="highlight-img-wrapper">
-          <img class="highlight-img" src="images/hero_farm.jpg" alt="Stardoi Eco-Friendly Smart Farm" style="filter: brightness(0.95) contrast(1.1);">
+          <img class="highlight-img" src="images/hero_farm.jpg" alt="Stardoi Eco-Friendly Smart Farm" style="filter: brightness(0.95) contrast(1.1);" loading="lazy">
         </div>
       </div>
 
@@ -306,27 +319,27 @@
       <div class="slideshow-container">
         <!-- Slide 1 -->
         <div class="my-slide fade">
-          <img src="images/slide1.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 1">
+          <img src="images/slide1.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 1" loading="lazy">
           <div class="slide-caption" data-translate="slide1-caption">สัมผัสบรรยากาศฟาร์มแกะสุดชิลท่ามกลางขุนเขา</div>
         </div>
         <!-- Slide 2 -->
         <div class="my-slide fade">
-          <img src="images/slide2.jpg" onerror="this.src='images/cafe_bakery.jpg'" alt="Stardoi Farm Slide 2">
+          <img src="images/slide2.jpg" onerror="this.src='images/cafe_bakery.jpg'" alt="Stardoi Farm Slide 2" loading="lazy">
           <div class="slide-caption" data-translate="slide2-caption">สนุกสนานไปกับกิจกรรมให้อาหารสัตว์นานาชนิด</div>
         </div>
         <!-- Slide 3 -->
         <div class="my-slide fade">
-          <img src="images/slide3.jpg" onerror="this.src='images/cute_sheep.jpg'" alt="Stardoi Farm Slide 3">
+          <img src="images/slide3.jpg" onerror="this.src='images/cute_sheep.jpg'" alt="Stardoi Farm Slide 3" loading="lazy">
           <div class="slide-caption" data-translate="slide3-caption">แวะพักจิบเครื่องดื่มและทานเบเกอรี่แสนอร่อยที่คาเฟ่</div>
         </div>
         <!-- Slide 4 -->
         <div class="my-slide fade">
-          <img src="images/slide4.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 4">
+          <img src="images/slide4.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 4" loading="lazy">
           <div class="slide-caption" data-translate="slide4-caption">มุมถ่ายรูปสวยๆ สไตล์ยุโรปมากมายทั่วฟาร์ม</div>
         </div>
         <!-- Slide 5 -->
         <div class="my-slide fade">
-          <img src="images/slide5.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 5">
+          <img src="images/slide5.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 5" loading="lazy">
           <div class="slide-caption" data-translate="slide5-caption">เก็บความทรงจำดีๆ ที่ฟาร์มแกะสตาร์ดอย</div>
         </div>
 
@@ -474,7 +487,7 @@
     <div class="modal-content glass-panel">
       <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
       <div class="modal-hero">
-        <img class="modal-img" id="modalImg" src="images/cute_sheep.jpg" alt="Sheep detail">
+        <img class="modal-img" id="modalImg" src="images/cute_sheep.jpg" alt="Sheep detail" loading="lazy">
         <div class="modal-header-info">
           <h2 id="modalName">ชื่อแกะ</h2>
         </div>
@@ -601,6 +614,8 @@
       &copy; 2026 Stardoi Sheep Farm Khao Yai. All rights reserved. Design with ❤️ for Sheep Lovers.
     </div>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- JavaScript logic -->
   <script src="app.js"></script>

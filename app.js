@@ -243,6 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set up Hero Parallax
   initParallax();
+
+  // Set up hamburger menu for mobile
+  initHamburgerMenu();
+
+  // Set up back-to-top button
+  initBackToTop();
+
+  // Set up active nav highlight
+  initActiveNav();
 });
 
 // ==========================================================================
@@ -293,12 +302,23 @@ function initSmartGreeting() {
     };
   }
   
-  // Register text to translations dictionary so it updates instantly when lang changes
   translations['smart-greeting-text'] = greetingObj;
   greetingEl.setAttribute('data-translate', 'smart-greeting-text');
   
-  // Update translation for this element
-  greetingEl.innerHTML = greetingObj[currentLanguage];
+  // Typed text effect
+  const fullText = greetingObj[currentLanguage];
+  greetingEl.innerHTML = '';
+  greetingEl.style.opacity = '1';
+  greetingEl.style.transform = 'translateY(0)';
+  let i = 0;
+  function typeChar() {
+    if (i < fullText.length) {
+      greetingEl.innerHTML += fullText.charAt(i);
+      i++;
+      setTimeout(typeChar, 40);
+    }
+  }
+  setTimeout(typeChar, 800);
 }
 
 function initScrollProgress() {
@@ -344,8 +364,7 @@ function updateTranslations() {
   });
 }
 
-// Global scope access for language toggle from HTML
-window.toggleLanguage = toggleLanguage;
+
 
 // ==========================================================================
 // 6. Ticket Estimator Calculator
@@ -406,23 +425,7 @@ if (addonPhoto && addonPhoto.checked && people > 0) {
   }, 150);
 }
 
-// Global scope access for quick registration
-window.submitReservation = function(e) {
-  if (e) e.preventDefault();
-  const people = document.getElementById('calcAdults').value || 0;
-  const total = document.getElementById('totalPrice').textContent;
-  
-  if (parseInt(people) === 0) {
-    alert(currentLanguage === 'th' ? 'กรุณาระบุจำนวนผู้เข้าชมอย่างน้อย 1 คน' : 'Please enter at least 1 visitor.');
-    return;
-  }
 
-  const successMsg = currentLanguage === 'th' 
-    ? `🎉 จองสิทธิ์ Quick Pass สำเร็จ!\nยอดรวมโดยประมาณ: ${total} บาท\nกรุณาแสดงหน้าจอนี้กับพนักงานจำหน่ายตั๋วเมื่อเดินทางมาถึงฟาร์มแกะสตาร์ดอย`
-    : `🎉 Quick Pass Reservation Confirmed!\nEstimated Total: ${total} THB\nPlease show this confirmation screen to the cashier upon arrival at Stardoi Sheep Farm.`;
-  
-  alert(successMsg);
-};
 
 // ==========================================================================
 // 7. Interactive Sheep Modal
@@ -646,6 +649,13 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     window.scrollTo(0, 0);
   }, 100); // Slight delay to override native browser automatic scroll jumps
+
+  // Hide page loader
+  const loader = document.getElementById('pageLoader');
+  if (loader) {
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 600);
+  }
 });
 
 // ==========================================================================
@@ -669,5 +679,74 @@ function initParallax() {
     if (stars) {
       stars.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
     }
+  });
+}
+
+// ==========================================================================
+// 11. Mobile Hamburger Menu
+// ==========================================================================
+function initHamburgerMenu() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const nav = document.querySelector('nav.mobile-nav');
+  if (!hamburger || !nav) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+
+  // Close menu when a nav link is clicked
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('open');
+    });
+  });
+}
+
+// ==========================================================================
+// 12. Back-to-Top Button
+// ==========================================================================
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ==========================================================================
+// 13. Active Navigation Highlight
+// ==========================================================================
+function initActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  
+  if (sections.length === 0 || navLinks.length === 0) return;
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('nav-active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('nav-active');
+      }
+    });
   });
 }
