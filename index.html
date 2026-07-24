@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ฟาร์มแกะสตาร์ดอย เขาใหญ่ (StardoiFarm Khaoyai) - สัมผัสธรรมชาติสไตล์สวิสอัลไพน์ ป้อนอาหารแกะ ถ่ายรูปสวย และคาเฟ่แสนอบอุ่น">
+  <meta name="keywords" content="ฟาร์มแกะเขาใหญ่, สตาร์ดอย, ที่เที่ยวเขาใหญ่, คาเฟ่เขาใหญ่, StardoiFarm Khaoyai, StardoiFarm">
+  <meta name="author" content="StardoiFarm Khaoyai">
+  <meta property="og:title" content="StardoiFarm Khaoyai - ฟาร์มแกะสตาร์ดอย เขาใหญ่">
+  <meta property="og:description" content="สัมผัสธรรมชาติสไตล์สวิสอัลไพน์ ป้อนอาหารแกะ ถ่ายรูปสวย และคาเฟ่แสนอบอุ่น ที่เขาใหญ่">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cover.png">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+  
+  <title>StardoiFarm Khaoyai - ฟาร์มแกะสตาร์ดอย เขาใหญ่</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-sunny">
+
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-sheep">🐑</div>
+    <p>Loading Stardoi Farm...</p>
+  </div>
+
+  <!-- ==========================================================================
+       Scroll Progress Bar
+       ========================================================================== -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       Header & Navigation
+       ========================================================================== -->
+  <header>
+    <a href="#" class="logo">
+      <img src="images/logo.jpg" alt="Stardoi Logo" class="logo-img" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;">
+      <span class="logo-text">Stardoi Farm Khaoyai</span>
+    </a>
+    
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-nav">
+      <a href="#hero" data-translate="nav-home">หน้าแรก</a>
+      <a href="#about" data-translate="nav-about">รู้จักสตาร์ดอย</a>
+      <a href="#flock" data-translate="nav-flock">น้องแกะของเรา</a>
+      <a href="#activities" data-translate="nav-activities">กิจกรรม</a>
+      <a href="#booking" data-translate="nav-booking">จองตั๋ว & พิกัด</a>
+    </nav>
+    
+    <div class="controls">
+      <!-- Theme Selection Dropdown -->
+      <select class="custom-select" id="themeSelect" aria-label="Select theme atmosphere">
+        <option value="mist">🌫️ Mist Morning</option>
+        <option value="sunny">☀️ Sunny Day</option>
+        <option value="golden">🌅 Golden Hour</option>
+        <option value="night">🌌 Starry Night</option>
+      </select>
+      
+      <!-- Language Selection Dropdown -->
+      <select class="custom-select" id="langSelect" aria-label="Select language" onchange="setLanguage(this.value)">
+        <option value="th">🇹🇭 TH</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="zh">🇨🇳 ZH</option>
+        <option value="ja">🇯🇵 JA</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="mist-overlay"></div>
+    <div class="stars-overlay"></div>
+    
+    <div class="hero-content reveal">
+      <div id="smartGreeting" class="smart-greeting"></div>
+      <span class="hero-tagline" data-translate="hero-tagline">สัมผัสความน่ารักท่ามกลางสายหมอกที่ เขาใหญ่</span>
+      <h1 data-translate="hero-title">ฟาร์มแกะสตาร์ดอย</h1>
+      <p data-translate="hero-desc">หลบหนีความวุ่นวายมาพักผ่อนในฟาร์มแกะสไตล์สวิสอัลไพน์ โอบล้อมด้วยขุนเขาเขียวขจีและบรรยากาศแสนอบอุ่น ผ่อนคลายไปกับคาเฟ่สุดคิวท์และเหล่าน้องแกะฟูนุ่ม</p>
+      <div class="hero-buttons">
+        <a href="#booking" class="btn-primary" data-translate="hero-cta">จองบัตรเข้าชม</a>
+        <a href="#activities" class="btn-secondary" data-translate="hero-secondary-cta">กิจกรรมในฟาร์ม</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       About Section
+       ========================================================================== -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-img-wrapper reveal">
+        <img class="about-img" src="images/cover.png" alt="StardoiFarm Khaoyai Landscape" loading="lazy">
+        <div class="about-badge">
+          <span data-translate="about-badge-val">ธรรมชาติ 100%</span>
+          <span data-translate="about-badge-lbl">โอบล้อมด้วยขุนเขา</span>
+        </div>
+      </div>
+      
+      <div class="about-text reveal">
+        <span class="section-tag" data-translate="about-tag">ยินดีต้อนรับสู่สตาร์ดอย</span>
+        <h2 data-translate="about-title">สวิตเซอร์แลนด์เมืองไทยที่เขาใหญ่</h2>
+        <h3 data-translate="about-h3" style="margin-top: 25px;">ทำไมต้องมาเช็คอินที่ สตาร์ดอย?</h3>
+        <p data-translate="about-p1">ฟาร์มแกะสตาร์ดอย ตั้งอยู่บนเนินเขาที่สวยที่สุดในอุทยานแห่งชาติเขาใหญ่ เราออกแบบฟาร์มในสไตล์ยุโรปชนบทเพื่อให้นักท่องเที่ยวได้สัมผัสธรรมชาติอย่างแท้จริง สายหมอกยามเช้าและหญ้าเขียวขจีจะช่วยเยียวยาจิตใจของคุณให้ผ่อนคลาย</p>
+        <p data-translate="about-p2">นอกจากแกะสายพันธุ์แท้ขนฟูนุ่มแล้ว เรายังมี Stardoi Cafe คาเฟ่ไม้สไตล์อบอุ่นที่พร้อมเสิร์ฟขนมอบใหม่ๆ และเครื่องดื่มสูตรพิเศษที่ใช้ส่วนผสมออร์แกนิกในพื้นที่</p>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">🏔️</div>
+            <div class="feature-desc">
+              <h4 data-translate="feat-scenery-title">วิวภูเขา 360 องศา</h4>
+              <p data-translate="feat-scenery-desc">ถ่ายรูปมุมไหนก็สวยเหมือนอยู่สวิตเซอร์แลนด์</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🥕</div>
+            <div class="feature-desc">
+              <h4 data-translate="feat-organic-title">อาหารแกะพรีเมียม</h4>
+              <p data-translate="feat-organic-desc">หญ้าและพืชผักออร์แกนิก ปลอดภัยต่อเด็กๆ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">🐑 · 🌿 · 🐑</div>
+
+  <!-- ==========================================================================
+       Meet The Flock Section (Interactive)
+       ========================================================================== -->
+  <section id="flock">
+    <div class="section-header reveal">
+      <span class="section-tag" data-translate="flock-tag">ดาวเด่นประจำฟาร์ม</span>
+      <h2 data-translate="flock-title">ทำความรู้จักน้องแกะตัวโปรด</h2>
+    </div>
+    
+    <div class="flock-grid">
+      <!-- Mumu Card -->
+      <div class="sheep-card glass-panel reveal" data-sheep-id="mumu">
+        <div class="sheep-img-wrapper">
+          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Mumu Merino Sheep" loading="lazy">
+        </div>
+        <div class="sheep-card-content">
+          <span class="sheep-card-tag" data-translate="flock-card-mumu-tag">สายกินจุ</span>
+          <h3 data-translate="flock-card-mumu-name">น้องมูมู่ (Mumu)</h3>
+          <p data-translate="flock-card-mumu-desc">แกะเมอริโนขนปุยหนานุ่มฟูที่สุดในฟาร์ม อ่อนโยนและน่ารัก...</p>
+          <div class="sheep-meta">
+            <span><strong data-translate="modal-stat-breed">สายพันธุ์</strong>: Corriedale</span>
+            <span><strong data-translate="modal-stat-food">ของโปรด</strong>: Clover</span>
+          </div>
+          <button class="btn-primary" style="margin-top:20px; width:100%; padding:10px;" data-translate="flock-card-mumu-btn">ดูประวัติน้อง</button>
+        </div>
+      </div>
+      
+      <!-- Kero Card -->
+      <div class="sheep-card glass-panel reveal" data-sheep-id="kero">
+        <div class="sheep-img-wrapper">
+          <img class="sheep-card-img" src="images/star_sheep_kero.jpg" alt="Kero Corriedale Sheep" style="filter: hue-rotate(15deg);" loading="lazy">
+        </div>
+        <div class="sheep-card-content">
+          <span class="sheep-card-tag" data-translate="flock-card-Kero-tag">จอมซน</span>
+          <h3 data-translate="flock-card-Kero-name">น้องเคโระ (Kero)</h3>
+          <p data-translate="flock-card-Kero-desc">ลูกแกะคอร์ริเดลสุดซุกซนที่ชอบกระโดดเล่นและดึงเชือกรองเท้า...</p>
+          <div class="sheep-meta">
+            <span><strong data-translate="modal-stat-breed">สายพันธุ์</strong>: Corriedale</span>
+            <span><strong data-translate="modal-stat-food">ของโปรด</strong>: Alfalfa</span>
+          </div>
+          <button class="btn-primary" style="margin-top:20px; width:100%; padding:10px;" data-translate="flock-card-Kero-btn">ดูประวัติน้อง</button>
+        </div>
+      </div>
+      
+      <!-- Coco Card -->
+      <div class="sheep-card glass-panel reveal" data-sheep-id="coco">
+        <div class="sheep-img-wrapper">
+          <img class="sheep-card-img" src="images/cute_sheep.jpg" alt="Coco Brown Sheep" style="filter: sepia(0.6) saturate(1.2) contrast(1.1);" loading="lazy">
+        </div>
+        <div class="sheep-card-content">
+          <span class="sheep-card-tag" data-translate="flock-card-coco-tag">ดาวเด่นไอจี</span>
+          <h3 data-translate="flock-card-coco-name">น้องโกโก้ (Coco)</h3>
+          <p data-translate="flock-card-coco-desc">แกะขนสีน้ำตาลช็อกโกแลตสุดหล่อที่รู้มุมกล้อง โพสท่าเก่งสุดๆ...</p>
+          <div class="sheep-meta">
+            <span><strong data-translate="modal-stat-breed">สายพันธุ์</strong>: Corriedale</span>
+            <span><strong data-translate="modal-stat-food">ของโปรด</strong>: Carrot</span>
+          </div>
+          <button class="btn-primary" style="margin-top:20px; width:100%; padding:10px;" data-translate="flock-card-coco-btn">ดูประวัติน้อง</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">🐑 · 🌿 · 🐑</div>
+
+  <!-- ==========================================================================
+       Activities Section
+       ========================================================================== */ -->
+  <section id="activities">
+    <div class="section-header reveal">
+      <span class="section-tag" data-translate="act-tag">ประสบการณ์สุดพิเศษ</span>
+      <h2 data-translate="act-title">กิจกรรมสนุกๆ สำหรับทุกคน</h2>
+    </div>
+    
+    <div class="activities-grid">
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Feed.jpg" alt="Feeding Sheep" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-1-title">ป้อนอาหารแกะอย่างใกล้ชิด</h3>
+          <p class="activity-desc" data-translate="act-1-desc">สัมผัสแกะขนฟูอย่างใกล้ชิดในทุ่งหญ้ากว้างขวาง ป้อนอาหารหญ้าและแครอทออร์แกนิกที่คัดสรรมาอย่างดี พร้อมถ่ายรูปคู่สุดน่ารัก</p>
+        </div>
+      </div>
+      
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Kayak1.jpg" alt="Kayaking" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-2-title">พายเรือคายัค ผจญภัยน้ำผุดธรรมชาติ</h3>
+          <p class="activity-desc" data-translate="act-2-desc">พายเรือคายัคสุดชิลในลำธารน้ำผุดธรรมชาติใสแจ๋ว ท่ามกลางบรรยากาศร่มรื่นของต้นไม้ใหญ่ สนุกและปลอดภัยสำหรับทุกคน</p>
+        </div>
+      </div>
+
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Alpaca.jpg" alt="Feeding Alpaca" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-alpaca-title">ป้อนอาหารอัลปาก้าอย่างใกล้ชิด</h3>
+          <p class="activity-desc" data-translate="act-alpaca-desc">พบกับความน่ารักของฝูงอัลปาก้าคอยาวขนปุย ยิ้มเก่งแสนรู้ ป้อนอาหารจากมือและถ่ายรูปเซลฟี่ได้อย่างใกล้ชิด</p>
+        </div>
+      </div>
+
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Rabbit1.jpg" alt="Feeding Rabbit" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-rabbit-title">ป้อนอาหารกระต่าย</h3>
+          <p class="activity-desc" data-translate="act-rabbit-desc">เอาใจเด็กๆ ด้วยบ้านกระต่ายสุดคิวท์ แวะมาป้อนแครอทและลูบขนกระต่ายน้อยหลากสายพันธุ์ที่กระโดดไปมาอย่างร่าเริง</p>
+        </div>
+      </div>
+
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Horse.jpg" alt="Horseback Riding" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-horse-title">ขี่ม้าชมวิว</h3>
+          <p class="activity-desc" data-translate="act-horse-desc">มีบริการขี่ม้าเพื่อถ่ายรูปและชมบรรยากาศทุ่งหญ้า มีเจ้าหน้าที่จูงให้ มือใหม่ก็เล่นได้สบายมาก ให้คุณรู้สึกเหมือนเป็นคาวบอยตัวจริง</p>
+        </div>
+      </div>
+
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Carousel.jpg" alt="Carousel" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-carousel-title">ม้าหมุน</h3>
+          <p class="activity-desc" data-translate="act-carousel-desc">ให้ฟีลเหมือนอยู่ในสวนสนุกยุโรปท่ามกลางวิวภูเขา นั่งม้าหมุนสุดคลาสสิก ถ่ายรูปเก๋ๆ ย้อนวัยเด็กได้ทั้งครอบครัว</p>
+        </div>
+      </div>
+
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/Paint.jpg" alt="Painting" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-paint-title">กิจกรรมระบายสีสร้างสรรค์</h3>
+          <p class="activity-desc" data-translate="act-paint-desc">ปลดปล่อยจินตนาการไปกับกิจกรรมระบายสีตุ๊กตาปูนปลาสเตอร์รูปน้องแกะและสัตว์น่ารักๆ สนุกสนานได้ทั้งครอบครัว พร้อมนำผลงานศิลปะชิ้นเดียวในโลกกลับบ้านเป็นที่ระลึก</p>
+        </div>
+      </div>
+      
+      <div class="activity-card glass-panel reveal">
+        <div class="activity-img-wrapper">
+          <img class="activity-img" src="images/star_sheep_kero.jpg" alt="Photo with Sheep" loading="lazy">
+        </div>
+        <div class="activity-content">
+          <h3 class="activity-title" data-translate="act-photo-title">ถ่ายรูปกับน้องแกะ</h3>
+          <p class="activity-desc" data-translate="act-photo-desc">บันทึกความทรงจำดีๆๆ สัมผัสความน่ารักของน้องแกะพันธุ์คอร์ริเดล ขนฟูนุ่มแสนเป็นมิตร พร้อมถ่ายรูปสวยๆ ท่ามกลางบรรยากาศธรรมชาติ</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Specialty Cafe & Glamping highlight panels -->
+    <div class="cafe-glamping-row">
+      <div class="highlight-card glass-panel reveal">
+        <div class="highlight-img-wrapper">
+          <img class="highlight-img" src="images/cafe_bakery.jpg" alt="Stardoi Cafe Bakery" loading="lazy">
+        </div>
+        <div class="highlight-content">
+          <span class="highlight-tag" data-translate="act-3-tag">ห้ามพลาด</span>
+          <h3 data-translate="act-3-title">สตาร์ดอยคาเฟ่ & เบเกอรี่</h3>
+          <p data-translate="act-3-p">นั่งชิลในร้านกาแฟสไตล์ไม้โอ๊คอบอุ่น ชิมเบเกอรี่อบสดใหม่ทุกเช้า เช่น ครัวซองต์เนยฝรั่งเศส และชาผลไม้หอมชื่นใจ พร้อมชมวิวเนินเขาและฝูงแกะเดินเล่นผ่านหน้ากระจกใสบานใหญ่</p>
+        </div>
+      </div>
+      
+      <div class="highlight-card glass-panel reverse reveal">
+        <div class="highlight-content">
+          <span class="highlight-tag" data-translate="act-4-tag">นวัตกรรมและธรรมชาติ</span>
+          <h3 data-translate="act-4-title">ฟาร์มรักษ์โลก (Smart Farm)</h3>
+          <p data-translate="act-4-p">เราบริหารจัดการฟาร์มด้วยระบบที่ทันสมัย ใส่ใจสิ่งแวดล้อมและสวัสดิภาพของสัตว์ (Animal Welfare) น้องแกะและสัตว์ทุกตัวได้รับการดูแลอย่างดีเยี่ยมด้วยความรัก เพื่อส่งมอบรอยยิ้มให้กับผู้มาเยือนทุกคน</p>
+        </div>
+        <div class="highlight-img-wrapper">
+          <img class="highlight-img" src="images/hero_farm.jpg" alt="Stardoi Eco-Friendly Smart Farm" style="filter: brightness(0.95) contrast(1.1);" loading="lazy">
+        </div>
+      </div>
+
+    <!-- Slideshow Wrapper -->
+    <div class="slideshow-section glass-panel reveal" style="margin-top: 60px; padding: 40px;">
+      <h3 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="slideshow-title">ประมวลภาพบรรยากาศและกิจกรรม</h3>
+      <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="my-slide fade">
+          <img src="images/slide1.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 1" loading="lazy">
+          <div class="slide-caption" data-translate="slide1-caption">สัมผัสบรรยากาศฟาร์มแกะสุดชิลท่ามกลางขุนเขา</div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="my-slide fade">
+          <img src="images/slide2.jpg" onerror="this.src='images/cafe_bakery.jpg'" alt="Stardoi Farm Slide 2" loading="lazy">
+          <div class="slide-caption" data-translate="slide2-caption">สนุกสนานไปกับกิจกรรมให้อาหารสัตว์นานาชนิด</div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="my-slide fade">
+          <img src="images/slide3.jpg" onerror="this.src='images/cute_sheep.jpg'" alt="Stardoi Farm Slide 3" loading="lazy">
+          <div class="slide-caption" data-translate="slide3-caption">แวะพักจิบเครื่องดื่มและทานเบเกอรี่แสนอร่อยที่คาเฟ่</div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="my-slide fade">
+          <img src="images/slide4.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 4" loading="lazy">
+          <div class="slide-caption" data-translate="slide4-caption">มุมถ่ายรูปสวยๆ สไตล์ยุโรปมากมายทั่วฟาร์ม</div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="my-slide fade">
+          <img src="images/slide5.jpg" onerror="this.src='images/cover.png'" alt="Stardoi Farm Slide 5" loading="lazy">
+          <div class="slide-caption" data-translate="slide5-caption">เก็บความทรงจำดีๆ ที่ฟาร์มแกะสตาร์ดอย</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="slide-prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="slide-next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="slide-dot" onclick="currentSlide(1)"></span>
+        <span class="slide-dot" onclick="currentSlide(2)"></span>
+        <span class="slide-dot" onclick="currentSlide(3)"></span>
+        <span class="slide-dot" onclick="currentSlide(4)"></span>
+        <span class="slide-dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">🐑 · 🌿 · 🐑</div>
+
+  <!-- ==========================================================================
+       Booking & Location Section
+       ========================================================================== -->
+  <section id="booking">
+    <div class="section-header reveal">
+      <span class="section-tag" data-translate="booking-tag">วางแผนการเดินทาง</span>
+      <h2 data-translate="booking-title">ข้อมูลผู้เข้าชม & จองตั๋วล่วงหน้า</h2>
+    </div>
+    
+    <div class="booking-container">
+      <!-- Left column: Info cards & simulated Map -->
+      <div class="info-cards reveal">
+        <div class="info-card glass-panel">
+          <div class="info-icon">📅</div>
+          <div class="info-text">
+            <h3 data-translate="info-1-title">เวลาทำการ</h3>
+            <p data-translate="info-1-desc">เปิดบริการทุกวัน: 08:00 น. - 18:00 น. (ไม่มีวันหยุด)</p>
+          </div>
+        </div>
+        
+        <div class="info-card glass-panel">
+          <div class="info-icon">🎫</div>
+          <div class="info-text">
+            <h3 data-translate="info-2-title">ค่าเข้าชมปกติ</h3>
+            <p data-translate="info-2-desc">ผู้ใหญ่ | เด็ก : 120 บาท | เด็ก (สูงไม่เกิน 120 ซม.): 0 บาท (ฟรี)</p>
+          </div>
+        </div>
+        
+        <div class="info-card glass-panel">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <h3 data-translate="info-3-title">ที่ตั้งของฟาร์ม</h3>
+            <p data-translate="info-3-desc">161/2, หมูสี, ปากช่อง, นครราชสีมา, 30130 (ใกล้น้ำผุดธรรมชาติบ้านท่าช้าง)</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right column: Cost Calculator Panel -->
+      <div class="ticket-calculator glass-panel reveal">
+        <h3 data-translate="calc-title">คำนวณราคาบัตรเข้าชม</h3>
+        <p class="calc-subtitle" data-translate="calc-subtitle">วางแผนค่าใช้จ่ายล่วงหน้าและรับบัตรเข้าคิวพิเศษทันที</p>
+        
+        <div class="calc-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="calcAdults" data-translate="label-adults">บัตรเข้าชมปกติ (120 บาท/ท่าน)</label>
+              <div class="input-spinner">
+                <button type="button" class="spinner-btn" onclick="updateSpinner('calcAdults', -1)">-</button>
+                <input type="number" id="calcAdults" min="0" value="2" readonly>
+                <button type="button" class="spinner-btn" onclick="updateSpinner('calcAdults', 1)">+</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="addonFeeding" data-translate="addon-feeding">อาหารสัตว์ (100 บาท/ชุด)</label>
+              <div class="input-spinner">
+                <button type="button" class="spinner-btn" onclick="updateSpinner('addonFeeding', -1)">-</button>
+                <input type="number" id="addonFeeding" min="0" value="0" readonly>
+                <button type="button" class="spinner-btn" onclick="updateSpinner('addonFeeding', 1)">+</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="addons-group">
+            <span class="addons-title" data-translate="label-addons">แพ็กเกจเสริมสุดคุ้ม</span>
+            
+
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="addonPhoto">
+              <span data-translate="addon-photo">สิทธิ์กอดแกะถ่ายรูปใกล้ชิด VIP (+100 บาท/กลุ่ม)</span>
+            </label>
+          </div>
+          
+          <div class="calc-total">
+            <div>
+              <span class="total-label" data-translate="label-total">ยอดรวมทั้งสิ้น:</span>
+              <span class="sheep-decor">🐑</span>
+            </div>
+            <div>
+              <span class="total-price" id="totalPrice">0</span>
+              <span class="total-label" data-translate="total-currency"> บาท</span>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+    
+    <!-- Google map placeholder & Inquiry contact form -->
+    <div class="map-contact-section">
+      <div class="map-wrapper glass-panel reveal">
+        <div class="map-placeholder">
+          <div class="map-placeholder-icon">📍</div>
+          <h3 data-translate="map-placeholder-title">แผนที่นำทาง Google Maps</h3>
+          <p data-translate="map-placeholder-desc" style="max-width: 320px; margin-top: 5px;">คลิกปุ่มด้านล่างเพื่อเปิดแผนที่ในมือถือนำทางมายังฟาร์มทันที</p>
+          <a href="https://maps.google.com/?q=stardoifarm+khaoyai" target="_blank" class="btn-primary map-btn" style="text-decoration: none; display: inline-block; box-sizing: border-box;" data-translate="btn-open-map">เปิด Google Maps นำทาง</a>
+        </div>
+      </div>
+      
+      <div class="contact-form glass-panel reveal">
+        <h3 data-translate="contact-title">สอบถามข้อมูลเพิ่มเติม</h3>
+        <form class="calc-form" id="contactFormElement">
+          <div class="form-group">
+            <label for="contactName" data-translate="label-name">ชื่อ-นามสกุล</label>
+            <input type="text" id="contactName" data-translate="placeholder-name" placeholder="กรุณากรอกชื่อของคุณ" required>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone" data-translate="label-phone">เบอร์โทรศัพท์</label>
+            <input type="tel" id="contactPhone" data-translate="placeholder-phone" placeholder="กรุณากรอกเบอร์โทรศัพท์" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage" data-translate="label-msg">ข้อความหรือคำถาม</label>
+            <textarea id="contactMessage" rows="3" data-translate="placeholder-msg" placeholder="สอบถามเรื่องการจอง หรือแพ็กเกจหมู่คณะ..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" data-translate="btn-send">ส่งข้อมูลติดต่อ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive Sheep Details Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="sheepModal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-hero">
+        <img class="modal-img" id="modalImg" src="images/cute_sheep.jpg" alt="Sheep detail" loading="lazy">
+        <div class="modal-header-info">
+          <h2 id="modalName">ชื่อแกะ</h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalDesc">คำอธิบายประวัติของน้องแกะ...</p>
+        
+        <div class="sheep-stats">
+          <div class="stat-box">
+            <div class="stat-icon">🧬</div>
+            <div>
+              <span class="stat-label" data-translate="modal-stat-breed">สายพันธุ์</span>
+              <span class="stat-value" id="statBreed">เมอริโน</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-icon">🌟</div>
+            <div>
+              <span class="stat-label" data-translate="modal-stat-char">นิสัยเอกลักษณ์</span>
+              <span class="stat-value" id="statChar">ขี้เซา</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-icon">🥕</div>
+            <div>
+              <span class="stat-label" data-translate="modal-stat-food">ของโปรด</span>
+              <span class="stat-value" id="statFood">โคลเวอร์</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <!-- ==========================================================================
+       Our Branches Section
+       ========================================================================== -->
+  <section id="branches" style="padding: 40px 5%; background: rgba(0,0,0,0.1); text-align: center;">
+    <div class="section-header reveal" style="margin-bottom: 20px;">
+      <span class="section-tag" data-translate="branches-tag" style="font-size: 0.8rem; letter-spacing: 1px;">ครอบครัวสตาร์ดอย</span>
+      <h2 data-translate="branches-title" style="font-size: 1.5rem; margin-top: 5px;">สาขาอื่นๆ ของเรา</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; text-align: left;">
+      
+      <!-- Chiang Saen Branch -->
+      <a href="https://www.facebook.com/stardoicoffee" target="_blank" class="branch-card glass-panel reveal" style="text-decoration: none; color: inherit; display: block; overflow: hidden; border-radius: 15px; transition: transform 0.3s; padding: 0;">
+        <div style="height: 140px; background: url('images/StardoiCoffee.jpg') center/cover;"></div>
+        <div style="padding: 15px;">
+          <h3 style="color: var(--text-color); margin-bottom: 5px; font-size: 1.1rem;" data-translate="branch-1-title">Stardoi Coffee & Farmstay</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px; line-height: 1.4;" data-translate="branch-1-desc">ที่พักฟาร์มแกะและคาเฟ่สุดชิล บรรยากาศดีบนดอยสะโง้ อ.เชียงแสน จ.เชียงราย</p>
+          <span style="color: var(--primary-color); font-weight: bold; font-size: 0.8rem;" data-translate="branch-1-loc">📍 ดอยสะโง้ เชียงแสน</span>
+        </div>
+      </a>
+
+      <!-- Pattaya Branch -->
+      <div class="branch-card glass-panel reveal" style="display: block; overflow: hidden; border-radius: 15px; position: relative; padding: 0;">
+        <div style="height: 140px; background: url('images/pattaya_sheep.jpg') center/cover;"></div>
+        <div style="position: absolute; top: 10px; right: 10px; background: #e8c370; color: #1a3c28; padding: 4px 10px; border-radius: 15px; font-weight: bold; font-size: 0.75rem; box-shadow: 0 2px 5px rgba(0,0,0,0.3);" data-translate="branch-2-badge">Coming Soon</div>
+        <div style="padding: 15px;">
+          <h3 style="color: var(--text-color); margin-bottom: 5px; font-size: 1.1rem;" data-translate="branch-2-title">Stardoi Farm Pattaya</h3>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px; line-height: 1.4;" data-translate="branch-2-desc">เตรียมพบกับฟาร์มแกะแห่งใหม่ใกล้ทะเล ที่พัทยา เร็วๆ นี้!</p>
+          <span style="color: var(--primary-color); font-weight: bold; font-size: 0.8rem;" data-translate="branch-2-loc">📍 พัทยา (Pattaya)</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="images/logo.jpg" alt="Stardoi Logo" class="logo-img" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover;">
+          <span class="footer-logo-text">Stardoi Farm Khaoyai</span>
+        </div>
+        <p>ฟาร์มแกะสไตล์ครอบครัวที่เขาใหญ่ สัมผัสอากาศดีๆ อาหารอร่อย และความน่ารักอบอุ่นของฝูงแกะสไตล์สวิตเซอร์แลนด์</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/stardoifarmkhaoyai" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@stardoifarmkhaoyai" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22" height="22" fill="currentColor"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>ลิงก์ด่วน</h4>
+        <ul>
+          <li><a href="#hero">หน้าแรก</a></li>
+          <li><a href="#about">รู้จักสตาร์ดอย</a></li>
+          <li><a href="#flock">น้องแกะของเรา</a></li>
+          <li><a href="#activities">กิจกรรม</a></li>
+          <li><a href="#booking">จองตั๋ว & พิกัด</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>การท่องเที่ยว</h4>
+        <ul>
+          <li><a href="#about">สวิตเซอร์แลนด์เมืองไทย</a></li>
+          <li><a href="#activities">อาหารแกะออร์แกนิก</a></li>
+          <li><a href="#activities">ฟาร์มรักษ์โลก</a></li>
+          <li><a href="#booking">ตารางเวลาเข้าชม</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>ติดต่อเรา</h4>
+        <p>📞 โทรศัพท์: 064 595 9395</p>
+        <p>✉️ อีเมล: stardoifarm@gmail.com</p>
+        <p>📍 161/2 หมู่ที่ 16 ตำบลหมูสี, ปากช่อง, จังหวัดนครราชสีมา 30130</p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2026 StardoiFarm Khaoyai. All rights reserved. Design with ❤️ for Animal Lovers.
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript logic -->
+  <script src="app.js"></script>
+</body>
+</html>
