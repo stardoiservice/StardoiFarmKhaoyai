@@ -1,4 +1,4 @@
-// Stardoi Sheep Farm Khao Yai - Client Logic
+// StardoiFarm Khaoyai - Client Logic
 // Features: Bilingual translations, Time-of-day theme controller, Interactive modals, Ticket estimator
 
 // ==========================================================================
@@ -13,28 +13,28 @@ const translations = {
   'nav-booking': { th: 'จองตั๋ว & พิกัด', en: 'Booking & Location', zh: '门票预订与位置', ja: 'チケット予約・アクセス' },
 
   // Hero Section
-  'hero-tagline': { th: 'สัมผัสประสบการณ์พักผ่อนเหนือระดับ ท่ามกลางสายหมอกแห่งเขาใหญ่', en: 'Experience cuteness amidst the mist at Khao Yai', zh: '在考艾的云雾中体验无尽的可爱', ja: 'カオヤイの霧の中で可愛さを体験する' },
-  'hero-title': { th: 'Stardoi Sheep Farm Khao Yai', en: 'Stardoi Sheep Farm', zh: '星山绵羊农场', ja: 'スタードイ羊牧場' },
-  'hero-desc': { th: 'หลีกหนีความวุ่นวาย สู่ความสงบในฟาร์มแกะสไตล์สวิสอัลไพน์ โอบล้อมด้วยขุนเขาเขียวขจี เติมเต็มวันพักผ่อนด้วยคาเฟ่บรรยากาศอบอุ่น และความน่ารักของฝูงแกะสายพันธุ์แท้', en: 'Escape the bustle to our Swiss Alpine-inspired sheep farm. Surrounded by lush mountains, cozy cafe vibes, and our fluffy flock of sheep.', zh: '远离喧嚣，来到我们这座受瑞士阿尔卑斯风格启发的绵羊农场。被翠绿的山脉、温馨的咖啡馆氛围以及毛茸茸的羊群环绕着。', ja: '都会の喧騒から逃れて、スイス・アルプス風の羊牧場へ。緑豊かな山々、居心地の良いカフェ、そしてふわふわの羊の群れに囲まれてリラックスしましょう。' },
-  'hero-cta': { th: 'จองบัตรเข้าชม', en: 'Book Ticket Now', zh: '立即订票', ja: 'チケットを予約する' },
-  'hero-secondary-cta': { th: 'กิจกรรมในฟาร์ม', en: 'Explore Activities', zh: '探索活动', ja: 'アクティビティを見る' },
+  'hero-tagline': { th: '✨ หนีร้อน หนีเมือง มาฟีลดี ท่ามกลางสายหมอกเขาใหญ่', en: 'Experience cuteness amidst the mist at Khao Yai', zh: '在考艾的云雾中体验无尽的可爱', ja: 'カオヤイの霧の中で可愛さを体験する' },
+  'hero-title': { th: 'StardoiFarm Khaoyai', en: 'StardoiFarm Khaoyai', zh: '星山农场', ja: 'スタードイファーム' },
+  'hero-desc': { th: 'ปลดปล่อยตัวเองสู่ดินแดนแห่งความฝัน ฟาร์มแกะสไตล์สวิสอัลไพน์ที่โอบล้อมด้วยขุนเขาเขียวขจี เติมเต็มทุกโมเมนต์ด้วยคาเฟ่บรรยากาศอบอุ่น และความน่ารักของฝูงแกะคอร์ริเดลแท้ๆ', en: 'Escape the bustle to our Swiss Alpine-inspired sheep farm. Surrounded by lush mountains, cozy cafe vibes, and our fluffy flock of sheep.', zh: '远离喧嚣，来到我们这座受瑞士阿尔卑斯风格启发的绵羊农场。被翠绿的山脉、温馨的咖啡馆氛围以及毛茸茸的羊群环绕着。', ja: '都会の喧騒から逃れて、スイス・アルプス風の羊牧場へ。緑豊かな山々、居心地の良いカフェ、そしてふわふわの羊の群れに囲まれてリラックスしましょう。' },
+  'hero-cta': { th: '🎫 จองบัตรเข้าชม', en: 'Book Ticket Now', zh: '立即订票', ja: 'チケットを予約する' },
+  'hero-secondary-cta': { th: '🎪 ดูกิจกรรมทั้งหมด', en: 'Explore Activities', zh: '探索活动', ja: 'アクティビティを見る' },
 
   // About Section
-  'about-tag': { th: 'ยินดีต้อนรับสู่สตาร์ดอย', en: 'Welcome to Stardoi', zh: '欢迎来到星山', ja: 'スタードイへようこそ' },
-  'about-title': { th: 'มนต์เสน่ห์แห่งสวิตเซอร์แลนด์ บนผืนป่าเขาใหญ่', en: 'Thailand\'s Little Switzerland in Khao Yai', zh: '考艾的“泰国小瑞士”', ja: 'タイのリトル・スイス、カオヤイ' },
+  'about-tag': { th: '🏔️ ยินดีต้อนรับสู่สตาร์ดอย', en: 'Welcome to Stardoi', zh: '欢迎来到星山', ja: 'スタードイへようこそ' },
+  'about-title': { th: 'สวิตเซอร์แลนด์กลางเมืองไทย ที่ต้องมาสักครั้ง!', en: 'Thailand\'s Little Switzerland in Khao Yai', zh: '考艾的“泰国小瑞士”', ja: 'タイのリトル・スイス、カオヤイ' },
   'about-badge-val': { th: 'ธรรมชาติ 100%', en: '100% Nature', zh: '100% 纯自然', ja: '100% 自然' },
   'about-badge-lbl': { th: 'โอบล้อมด้วยขุนเขา', en: 'Mountain Vibe', zh: '山脉环绕', ja: '山々に囲まれて' },
-  'about-h3': { th: 'ทำไมต้องมาเช็คอินที่ สตาร์ดอย?', en: 'Why Check-in at Stardoi?', zh: '为什么要来星山打卡？', ja: 'なぜスタードイを訪れるべきなのか？' },
-  'about-p1': { th: 'Stardoi Sheep Farm ตั้งตระหง่านบนเนินเขาที่งดงามที่สุดของเขาใหญ่ รังสรรค์พื้นที่ในสไตล์ยุโรปคันทรี เพื่อมอบประสบการณ์การพักผ่อนที่เหนือกว่า ให้คุณได้สัมผัสสายหมอกยามเช้าและทุ่งหญ้าเขียวขจีที่จะช่วยบำบัดจิตใจอย่างสมบูรณ์แบบ', en: 'Stardoi Sheep Farm is situated on one of the most scenic hills of Khao Yai. We designed our farm in a European countryside style, allowing visitors to touch nature. The morning mist and green meadows will soothe and refresh your soul.', zh: '星山绵羊农场位于考艾风景最美的山丘之一。我们以欧洲乡村风格设计农场，让游客能够真正接触自然。清晨的薄雾和翠绿的草地将抚慰和刷新您的心灵。', ja: 'スタードイ羊牧場は、カオヤイで最も美しい丘の1つに位置しています。ヨーロッパの田舎風にデザインされた牧場で、自然と触れ合うことができます。朝霧と緑の牧草地があなたの心を癒し、リフレッシュさせます。' },
-  'about-p2': { th: 'จุดเด่นที่พลาดไม่ได้คือ ฝูงแกะสายพันธุ์คอร์ริเดล (Corriedale) กว่า 100 ตัว พร้อมลูกแกะแสนน่ารัก ที่รอให้คุณและครอบครัวได้สัมผัสและป้อนอาหารอย่างใกล้ชิด นอกจากนี้ เรายังพร้อมเสิร์ฟความสุขผ่าน Stardoi Cafe คาเฟ่เรือนไม้สไตล์โคซี่ที่อบอวลไปด้วยกลิ่นหอมของเบเกอรี่อบสดใหม่ทุกวัน', en: 'The main highlight is our flock of over 100 Corriedale sheep and numerous adorable lambs! Kids can get up close, touch, and feed them. Nowhere else offers more joy than Stardoi Farm! We also have a cozy wooden cafe serving freshly baked pastries daily.', zh: '最大的亮点是我们拥有100多只科里代尔羊（Corriedale）和众多可爱的小羊羔！孩子们可以近距离接触并给它们喂食。没有其他地方能比星山农场提供更多的欢乐了！我们还有一家舒适的木制咖啡馆，每天供应新鲜出炉的糕点。', ja: '最大のハイライトは、100頭以上のコリデール羊とたくさんの可愛い子羊たちです！子供たちは近くで触れ合い、エサをあげることができます。スタードイ牧場以上に楽しい場所はありません！また、毎日焼きたてのペストリーを提供する温かみのある木造カフェもあります。' },
+  'about-h3': { th: 'ทำไมใครๆ ก็ต้องมาเช็คอินที่นี่?', en: 'Why Check-in at Stardoi?', zh: '为什么要来星山打卡？', ja: 'なぜスタードイを訪れるべきなのか？' },
+  'about-p1': { th: 'StardoiFarm Khaoyai ตั้งตระหง่านบนเนินเขาที่งดงามที่สุดของเขาใหญ่ รังสรรค์ทุกมุมให้เป็นพื้นที่ถ่ายรูปสุดปังสไตล์ยุโรปคันทรี ให้คุณได้สัมผัสสายหมอกยามเช้าและทุ่งหญ้าเขียวขจีที่จะเยียวยาหัวใจ', en: 'StardoiFarm Khaoyai is situated on one of the most scenic hills of Khao Yai. We designed our farm in a European countryside style, allowing visitors to touch nature. The morning mist and green meadows will soothe and refresh your soul.', zh: '星山农场位于考艾风景最美的山丘之一。我们以欧洲乡村风格设计农场，让游客能够真正接触自然。清晨的薄雾和翠绿的草地将抚慰和刷新您的心灵。', ja: 'スタードイファームは、カオヤイで最も美しい丘の1つに位置しています。ヨーロッパの田舎風にデザインされた牧場で、自然と触れ合うことができます。朝霧と緑の牧草地があなたの心を癒し、リフレッシュさせます。' },
+  'about-p2': { th: 'ไฮไลท์ห้ามพลาด! ฝูงแกะคอร์ริเดลกว่า 100 ตัว พร้อมลูกแกะน้อยแสนน่ารัก รอให้คุณได้กอดและป้อนอาหารอย่างใกล้ชิด แถมยังมี Stardoi Cafe คาเฟ่เรือนไม้สุดชิลที่เสิร์ฟเบเกอรี่อบสดใหม่ทุกเช้า พร้อมวิวพาโนรามาแบบจุกๆ', en: 'The main highlight is our flock of over 100 Corriedale sheep and numerous adorable lambs! Kids can get up close, touch, and feed them. Nowhere else offers more joy than Stardoi Farm! We also have a cozy wooden cafe serving freshly baked pastries daily.', zh: '最大的亮点是我们拥有100多只科里代尔羊（Corriedale）和众多可爱的小羊羔！孩子们可以近距离接触并给它们喂食。没有其他地方能比星山农场提供更多的欢乐了！我们还有一家舒适的木制咖啡馆，每天供应新鲜出炉的糕点。', ja: '最大のハイライトは、100頭以上のコリデール羊とたくさんの可愛い子羊たちです！子供たちは近くで触れ合い、エサをあげることができます。スタードイ牧場以上に楽しい場所はありません！また、毎日焼きたてのペストリーを提供する温かみのある木造カフェもあります。' },
   'feat-scenery-title': { th: 'วิวภูเขา 360 องศา', en: '360° Mountain View', zh: '360° 山景', ja: '360° のマウンテンビュー' },
   'feat-scenery-desc': { th: 'ถ่ายรูปมุมไหนก็สวยเหมือนอยู่สวิตเซอร์แลนด์', en: 'Photos look like Switzerland from every angle', zh: '从任何角度拍照都像在瑞士一样美', ja: 'どこから写真を撮ってもスイスのような美しさ' },
   'feat-organic-title': { th: 'อาหารแกะพรีเมียม', en: 'Premium Feeding', zh: '优质饲料', ja: 'プレミアムなエサやり' },
   'feat-organic-desc': { th: 'หญ้าและพืชผักออร์แกนิก ปลอดภัยต่อเด็กๆ และสัตว์เลี้ยง', en: 'Organic grass and vegetables, safe for kids & sheep', zh: '有机牧草和蔬菜，对孩子和羊群都很安全', ja: '子供と羊に安全なオーガニック牧草と野菜' },
 
   // Flock Section
-  'flock-tag': { th: 'ดาวเด่นประจำฟาร์ม', en: 'Farm Stars', zh: '农场之星', ja: '牧場のスターたち' },
-  'flock-title': { th: 'ทำความรู้จักสมาชิกคนสำคัญของเรา', en: 'Meet Our Fluffy Flock', zh: '认识我们毛茸茸的羊群', ja: 'ふわふわの羊たちに会いましょう' },
+  'flock-tag': { th: '⭐ ดาวเด่นประจำฟาร์ม', en: 'Farm Stars', zh: '农场之星', ja: '牧場のスターたち' },
+  'flock-title': { th: 'มารู้จักน้องแกะขวัญใจทุกคน!', en: 'Meet Our Fluffy Flock', zh: '认识我们毛茸茸的羊群', ja: 'ふわふわの羊たちに会いましょう' },
   'flock-card-mumu-tag': { th: 'สายกินจุ', en: 'Corriedale', zh: '科里代尔羊', ja: 'コリデール' },
   'flock-card-mumu-name': { th: 'น้องมูมู่ (Mumu)', en: 'Mumu', zh: '木木 (Mumu)', ja: 'ムム (Mumu)' },
   'flock-card-mumu-desc': { th: 'แกะคอร์ริเดลขนปุยหนานุ่มฟูที่สุดในฟาร์ม อ่อนโยนและน่ารัก...', en: 'The fluffiest Corriedale sheep in the farm. Extremely gentle and cute...', zh: '农场里毛最蓬松的科里代尔羊。极其温顺可爱...', ja: '牧場で最もふわふわなコリデール羊。とても穏やかで可愛い...' },
@@ -49,23 +49,23 @@ const translations = {
   'flock-card-coco-btn': { th: 'ดูประวัติน้อง', en: 'View Profile', zh: '查看简介', ja: 'プロフィールを見る' },
 
   // Activities Section
-  'act-tag': { th: 'ประสบการณ์สุดพิเศษ', en: 'Unforgettable Experiences', zh: '难忘的经历', ja: '忘れられない体験' },
-  'act-title': { th: 'รังสรรค์กิจกรรมสุดพิเศษ เพื่อทุกความทรงจำ', en: 'Fun Activities for Everyone', zh: '适合所有人的趣味活动', ja: 'みんなで楽しめるアクティビティ' },
-  'act-1-title': { th: 'ใกล้ชิดฝูงแกะท่ามกลางธรรมชาติ', en: 'Close Feeding Session', zh: '近距离喂食体验', ja: '間近でのエサやり体験' },
-  'act-1-desc': { th: 'สัมผัสความน่ารักของฝูงแกะขนปุยในทุ่งหญ้ากว้างใหญ่ พร้อมป้อนอาหารด้วยหญ้าและแครอทออร์แกนิกที่คัดสรรมาเป็นพิเศษ เพื่อสุขภาพที่ดีของสัตว์น้อย และความปลอดภัยสูงสุด', en: 'Get up close with the fluffy sheep in our wide pasture. Feed them high-quality organic grass and carrots while taking cute photos.', zh: '在宽阔的牧场里与毛茸茸的羊群亲密接触。给它们喂食优质的有机牧草和胡萝卜，同时拍下可爱的照片。', ja: '広い牧場でふわふわの羊と触れ合えます。高品質なオーガニック牧草やニンジンをあげながら、可愛い写真を撮りましょう。' },
-  'act-2-title': { th: 'พายเรือคายัค ผจญภัยน้ำผุดธรรมชาติ', en: 'Kayaking in Natural Springs', zh: '天然泉水皮划艇', ja: '天然泉でのカヤック' },
+  'act-tag': { th: '🎉 ประสบการณ์ที่ไม่เหมือนใคร', en: 'Unforgettable Experiences', zh: '难忘的经历', ja: '忘れられない体験' },
+  'act-title': { th: 'รวมกิจกรรมสุดฟิน สำหรับทุกคนในครอบครัว', en: 'Fun Activities for Everyone', zh: '适合所有人的趣味活动', ja: 'みんなで楽しめるアクティビティ' },
+  'act-1-title': { th: '🐑 ป้อนอาหารแกะตัวต่อตัว', en: 'Close Feeding Session', zh: '近距离喂食体验', ja: '間近でのエサやり体験' },
+  'act-1-desc': { th: 'มาสัมผัสความขนฟูของน้องแกะแบบใกล้ชิดสุดๆ ในทุ่งหญ้ากว้างใหญ่ ป้อนอาหารออร์แกนิกจากมือคุณเอง พร้อมเก็บภาพความประทับใจที่หาที่ไหนไม่ได้', en: 'Get up close with the fluffy sheep in our wide pasture. Feed them high-quality organic grass and carrots while taking cute photos.', zh: '在宽阔的牧场里与毛茸茸的羊群亲密接触。给它们喂食优质的有机牧草和胡萝卜，同时拍下可爱的照片。', ja: '広い牧場でふわふわの羊と触れ合えます。高品質なオーガニック牧草やニンジンをあげながら、可愛い写真を撮りましょう。' },
+  'act-2-title': { th: '🛶 พายเรือคายัค ผจญภัยน้ำผุดธรรมชาติ', en: 'Kayaking in Natural Springs', zh: '天然泉水皮划艇', ja: '天然泉でのカヤック' },
   'act-2-desc': { th: 'พายเรือคายัคสุดชิลในลำธารน้ำผุดธรรมชาติใสแจ๋ว ท่ามกลางบรรยากาศร่มรื่นของต้นไม้ใหญ่ สนุกและปลอดภัยสำหรับทุกคน', en: 'Relax and kayak in the crystal-clear natural spring stream surrounded by lush trees. Fun and safe for everyone.', zh: '在绿树成荫、清澈见底的天然泉水溪流中放松划皮划艇。安全又有趣，适合所有人。', ja: '緑豊かな木々に囲まれた透き通った天然泉の小川でリラックスしてカヤック。安全で誰でも楽しめます。' },
-  'act-alpaca-title': { th: 'ป้อนอาหารอัลปาก้าอย่างใกล้ชิด', en: 'Alpaca Feeding', zh: '喂食羊驼', ja: 'アルパカのエサやり' },
+  'act-alpaca-title': { th: '🦙 เซลฟี่กับอัลปาก้าสุดคิวท์', en: 'Alpaca Feeding', zh: '喂食羊驼', ja: 'アルパカのエサやり' },
   'act-alpaca-desc': { th: 'พบกับความน่ารักของฝูงอัลปาก้าคอยาวขนปุย ยิ้มเก่งแสนรู้ ป้อนอาหารจากมือและถ่ายรูปเซลฟี่ได้อย่างใกล้ชิด', en: 'Meet our adorable long-necked, fluffy alpacas. Hand-feed them and take selfies with these smiling, smart creatures.', zh: '遇见我们可爱的长脖子毛绒羊驼。亲手喂食，并与这些爱笑、聪明的动物自拍。', ja: '長首でふわふわの可愛いアルパカに会いましょう。手からエサをあげて、笑顔の賢い動物たちと自撮りしましょう。' },
-  'act-rabbit-title': { th: 'ป้อนอาหารกระต่าย', en: 'Rabbit Feeding', zh: '喂食兔子', ja: 'ウサギのエサやり' },
+  'act-rabbit-title': { th: '🐰 ป้อนอาหารกระต่าย', en: 'Rabbit Feeding', zh: '喂食兔子', ja: 'ウサギのエサやり' },
   'act-rabbit-desc': { th: 'เอาใจเด็กๆ ด้วยบ้านกระต่ายสุดคิวท์ แวะมาป้อนแครอทและลูบขนกระต่ายน้อยหลากสายพันธุ์ที่กระโดดไปมาอย่างร่าเริง', en: 'A treat for kids with our cute rabbit house. Feed carrots and pet various breeds of joyful, hopping bunnies.', zh: '在可爱的兔子屋里给孩子们带来惊喜。喂胡萝卜并抚摸各种欢蹦乱跳的兔子。', ja: '可愛いウサギ小屋は子供たちに大人気。色々な種類の元気なウサギにニンジンをあげて撫でましょう。' },
-  'act-horse-title': { th: 'ขี่ม้าชมวิว', en: 'Scenic Horseback Riding', zh: '观景骑马', ja: '絶景乗馬' },
+  'act-horse-title': { th: '🐴 ขี่ม้าชมวิวทุ่งหญ้า', en: 'Scenic Horseback Riding', zh: '观景骑马', ja: '絶景乗馬' },
   'act-horse-desc': { th: 'มีบริการขี่ม้าเพื่อถ่ายรูปและชมบรรยากาศทุ่งหญ้า มีเจ้าหน้าที่จูงให้ มือใหม่ก็เล่นได้สบายมาก ให้คุณรู้สึกเหมือนเป็นคาวบอยตัวจริง', en: 'Horseback riding service for photos and scenic views. Guided by staff, it’s perfect for beginners. Feel like a real cowboy!', zh: '提供骑马拍照和观赏美景的服务。由工作人员牵引，非常适合初学者。感觉就像个真正的牛仔！', ja: '写真撮影や絶景を楽しむ乗馬サービス。スタッフが案内するので初心者でも安心です。本物のカウボーイの気分を！' },
-  'act-carousel-title': { th: 'ม้าหมุน', en: 'Classic Carousel', zh: '经典旋转木马', ja: 'クラシックメリーゴーランド' },
+  'act-carousel-title': { th: '🎠 ม้าหมุนสุดคลาสสิก', en: 'Classic Carousel', zh: '经典旋转木马', ja: 'クラシックメリーゴーランド' },
   'act-carousel-desc': { th: 'ให้ฟีลเหมือนอยู่ในสวนสนุกยุโรปท่ามกลางวิวภูเขา นั่งม้าหมุนสุดคลาสสิก ถ่ายรูปเก๋ๆ ย้อนวัยเด็กได้ทั้งครอบครัว', en: 'Feel like you are in a European amusement park amidst the mountains. Ride the classic carousel and take chic photos with the whole family.', zh: '仿佛置身于群山环抱的欧洲游乐园。乘坐经典的旋转木马，与全家人一起拍下别致的照片。', ja: '山々に囲まれたヨーロッパの遊園地にいるような気分に。クラシックなメリーゴーランドに乗って、家族みんなで素敵な写真を撮りましょう。' },
-  'act-paint-title': { th: 'กิจกรรมระบายสีสร้างสรรค์', en: 'Creative Painting Activity', zh: '创意彩绘活动', ja: 'クリエイティブ・ペインティング' },
+  'act-paint-title': { th: '🎨 ระบายสีสร้างสรรค์', en: 'Creative Painting Activity', zh: '创意彩绘活动', ja: 'クリエイティブ・ペインティング' },
   'act-paint-desc': { th: 'ปลดปล่อยจินตนาการไปกับกิจกรรมระบายสีตุ๊กตาปูนปลาสเตอร์รูปน้องแกะและสัตว์น่ารักๆ สนุกสนานได้ทั้งครอบครัว พร้อมนำผลงานศิลปะชิ้นเดียวในโลกกลับบ้านเป็นที่ระลึก', en: 'Unleash your imagination with our plaster painting activity! Paint cute sheep and animals. It\'s fun for the whole family, and you can take your unique masterpiece home.', zh: '通过我们的石膏彩绘活动释放您的想象力！给可爱的羊和其他动物上色。这是一项适合全家的有趣活动，您还可以将这件独一无二的杰作带回家。', ja: '石膏ペインティングで想像力を解き放ちましょう！可愛い羊や動物たちに色を塗ります。家族みんなで楽しめ、世界に一つだけの作品を持ち帰ることができます。' },
-  'act-photo-title': { th: 'ถ่ายรูปกับน้องแกะ', en: 'Photo with Sheep', zh: '与羊合影', ja: '羊と写真撮影' },
+  'act-photo-title': { th: '📸 ถ่ายรูปคู่น้องแกะ', en: 'Photo with Sheep', zh: '与羊合影', ja: '羊と写真撮影' },
   'act-photo-desc': { th: 'บันทึกความทรงจำดีๆๆ สัมผัสความน่ารักของน้องแกะพันธุ์คอร์ริเดล ขนฟูนุ่มแสนเป็นมิตร พร้อมถ่ายรูปสวยๆ ท่ามกลางบรรยากาศธรรมชาติ', en: 'Capture great memories! Touch the cuteness of our friendly, fluffy Corriedale sheep and take beautiful photos amidst a natural atmosphere.', zh: '记录美好的回忆！触摸我们友好而毛茸茸的科里代尔羊，在自然的氛围中拍下美丽的照片。', ja: '素晴らしい思い出を写真に！フレンドリーでふわふわのコリデール羊と触れ合い、大自然の中で美しい写真を撮りましょう。' },
   'act-3-title': { th: 'Stardoi Cafe & Bakery', en: 'Stardoi Cafe & Bakery', zh: '星山咖啡与烘焙', ja: 'スタードイカフェ＆ベーカリー' },
   'act-3-tag': { th: 'ไฮไลท์ที่ห้ามพลาด', en: 'Must Visit', zh: '不容错过', ja: '必見' },
@@ -80,10 +80,10 @@ const translations = {
   'slide2-caption': { th: 'สนุกสนานไปกับกิจกรรมให้อาหารสัตว์นานาชนิด', en: 'Have fun feeding various friendly animals', zh: '享受喂食各种友好动物的乐趣', ja: '様々なフレンドリーな動物たちのエサやりを楽しむ' },
   'slide3-caption': { th: 'แวะพักจิบเครื่องดื่มและทานเบเกอรี่แสนอร่อยที่คาเฟ่', en: 'Enjoy delicious drinks and pastries at our cafe', zh: '在我们的咖啡馆享用美味的饮品和糕点', ja: 'カフェで美味しいドリンクとペストリーを楽しむ' },
   'slide4-caption': { th: 'มุมถ่ายรูปสวยๆ สไตล์ยุโรปมากมายทั่วฟาร์ม', en: 'Many beautiful European-style photo spots around the farm', zh: '农场周围有许多美丽的欧洲风情拍照点', ja: '牧場内には美しいヨーロッパ風の写真スポットがたくさんあります' },
-  'slide5-caption': { th: 'เก็บความทรงจำดีๆ ที่ฟาร์มแกะสตาร์ดอย', en: 'Capture great memories at Stardoi Sheep Farm', zh: '在星山绵羊农场捕捉美好的回忆', ja: 'スタードイ羊牧場で素晴らしい思い出を記録しましょう' },
+  'slide5-caption': { th: 'เก็บความทรงจำดีๆ ที่ฟาร์มแกะสตาร์ดอย', en: 'Capture great memories at StardoiFarm Khaoyai', zh: '在星山农场捕捉美好的回忆', ja: 'スタードイファームで素晴らしい思い出を記録しましょう' },
 
   // Branches Section
-  'branches-tag': { th: 'ครอบครัวสตาร์ดอย', en: 'Stardoi Family', zh: '星山家族', ja: 'スタードイファミリー' },
+  'branches-tag': { th: '🌏 ครอบครัวสตาร์ดอย', en: 'Stardoi Family', zh: '星山家族', ja: 'スタードイファミリー' },
   'branches-title': { th: 'สาขาอื่นๆ ของเรา', en: 'Our Other Branches', zh: '我们的其他分店', ja: 'その他の支店' },
   'branch-1-title': { th: 'Stardoi Coffee & Farmstay', en: 'Stardoi Coffee & Farmstay', zh: '星山咖啡与农场住宿', ja: 'スタードイ・コーヒー＆ファームステイ' },
   'branch-1-desc': { th: 'ที่พักฟาร์มแกะและคาเฟ่สุดชิล บรรยากาศดีบนดอยสะโง้ อ.เชียงแสน จ.เชียงราย', en: 'Relaxing sheep farm stay and cafe with great atmosphere at Doi Sa Ngo, Chiang Saen, Chiang Rai.', zh: '位于清莱清盛县多桑诺的放松绵羊农场住宿和氛围极佳的咖啡馆。', ja: 'チェンライ県チェンセーンのドイサゴにある、雰囲気抜群の羊牧場ステイとカフェ。' },
@@ -94,19 +94,19 @@ const translations = {
   'branch-2-loc': { th: '📍 พัทยา (Pattaya)', en: '📍 Pattaya', zh: '📍 芭提雅 (Pattaya)', ja: '📍 パタヤ (Pattaya)' },
 
   // Visitor & Booking Section
-  'booking-tag': { th: 'วางแผนการเดินทาง', en: 'Plan Your Visit', zh: '计划您的行程', ja: '訪問の計画' },
-  'booking-title': { th: 'ข้อมูลการเข้าชม และสำรองสิทธิ์ล่วงหน้า', en: 'Visitor Info & Ticket Estimator', zh: '游客信息与门票估算', ja: '来場者情報とチケット見積もり' },
+  'booking-tag': { th: '📋 วางแผนทริปง่ายๆ', en: 'Plan Your Visit', zh: '计划您的行程', ja: '訪問の計画' },
+  'booking-title': { th: 'เช็คราคา & นำทางมาฟาร์ม', en: 'Visitor Info & Ticket Estimator', zh: '游客信息与门票估算', ja: '来場者情報とチケット見積もり' },
   'info-1-title': { th: 'เวลาทำการ', en: 'Opening Hours', zh: '营业时间', ja: '営業時間' },
   'info-1-desc': { th: 'เปิดให้บริการทุกวัน: 08:00 น. - 18:00 น.', en: 'Open Daily: 8:00 AM - 6:00 PM (No Holidays)', zh: '每日营业：上午 8:00 - 下午 6:00（无假日）', ja: '毎日営業：午前8:00〜午後6:00（無休）' },
   'info-2-title': { th: 'อัตราค่าเข้าชม', en: 'General Admission', zh: '普通门票', ja: '一般入場料' },
   'info-2-desc': { th: 'ผู้ใหญ่ : 120 บาท | เด็ก (สูงไม่เกิน 120 ซม.): เข้าชมฟรี', en: 'Adult: 120 THB | Child (under 120cm): FREE', zh: '成人：120泰铢 | 儿童（120厘米以下）：免费', ja: '大人：120バーツ | 子供（身長120cm以下）：無料' },
   'info-3-title': { th: 'ที่ตั้งฟาร์ม', en: 'Location Map', zh: '位置地图', ja: 'アクセスマップ' },
   'info-3-desc': { th: '161/2, หมูสี, ปากช่อง, นครราชสีมา 30130 (ใกล้น้ำผุดธรรมชาติบ้านท่าช้าง)', en: '161/2, Moosi, Pakchong, Nakhon Ratchasima, 30130 (Near Ban Tha Chang Natural Spring)', zh: '161/2, Moosi, Pakchong, Nakhon Ratchasima, 30130（靠近Ban Tha Chang天然泉水）', ja: '161/2, Moosi, Pakchong, Nakhon Ratchasima, 30130（バーン・ターチャーン天然泉近く）' },
-  'calc-title': { th: 'ประเมินค่าใช้จ่ายเบื้องต้น', en: 'Entrance Fee Estimator', zh: '门票费用估算', ja: '入場料見積もり' },
-  'calc-subtitle': { th: 'เพื่อการวางแผนทริปที่สมบูรณ์แบบ และรับสิทธิ์เข้าชมแบบ Fast Track', en: 'Estimate your visiting cost and get queue priority', zh: '估算您的游览费用并获得排队优先权', ja: '訪問費用を見積もり、優先入場キューを取得しましょう' },
+  'calc-title': { th: '💰 คำนวณค่าเข้าชมเบื้องต้น', en: 'Entrance Fee Estimator', zh: '门票费用估算', ja: '入場料見積もり' },
+  'calc-subtitle': { th: 'วางแผนงบประมาณก่อนมาเที่ยวจริง ง่ายนิดเดียว!', en: 'Estimate your visiting cost and get queue priority', zh: '估算您的游览费用并获得排队优先权', ja: '訪問費用を見積もり、優先入場キューを取得しましょう' },
   'label-adults': { th: 'บัตรเข้าชมปกติ (120 บาท/ท่าน)', en: 'Adult (120 THB/person)', zh: '成人 (120泰铢/人)', ja: '大人 (120バーツ/人)' },
   'label-kids': { th: 'เด็กเล็ก เข้าชมฟรี (สูงไม่เกิน 120 ซม.)', en: 'Small Child FREE (under 120cm)', zh: '幼童 免费 (120厘米以下)', ja: '幼児 無料 (身長120cm以下)' },
-  'label-addons': { th: 'แพ็กเกจเสริมสุดพิเศษ', en: 'Special Value Add-ons', zh: '超值附加服务', ja: '特別バリューオプション' },
+  'label-addons': { th: '🎁 แพ็กเกจเสริมสุดคุ้ม', en: 'Special Value Add-ons', zh: '超值附加服务', ja: '特別バリューオプション' },
   'addon-feeding': { th: 'ชุดอาหารสัตว์ (100 บาท/ชุด)', en: 'Animal Feed (100 THB/set)', zh: '动物饲料 (100泰铢/套)', ja: '動物の餌 (100バーツ/セット)' },
   'addon-photo': { th: 'สิทธิ์กอดแกะถ่ายรูปใกล้ชิดแบบ VIP (+100 บาท)', en: 'VIP Close Sheep Hug & Photo Session (+100 THB/group)', zh: 'VIP 近距离拥抱羊群及拍照 (+100 泰铢/组)', ja: 'VIP 羊とのハグ＆写真撮影 (+100 バーツ/グループ)' },
   'label-total': { th: 'ยอดรวมทั้งสิ้น:', en: 'Estimated Total:', zh: '预估总计：', ja: 'お見積もり合計：' },
@@ -114,17 +114,17 @@ const translations = {
   'btn-estimate': { th: 'ยืนยันการจองสิทธิ์ (Fast Track)', en: 'Reserve Quick Pass', zh: '预订快速通行证', ja: 'クイックパスを予約する' },
 
   // Contact Form & Map
-  'contact-title': { th: 'สอบถามข้อมูลเพิ่มเติม', en: 'Inquire Info', zh: '咨询信息', ja: 'お問い合わせ' },
+  'contact-title': { th: '💬 มีคำถาม? ทักมาเลย!', en: 'Inquire Info', zh: '咨询信息', ja: 'お問い合わせ' },
   'label-name': { th: 'ชื่อ-นามสกุล', en: 'Your Name', zh: '您的姓名', ja: 'お名前' },
   'placeholder-name': { th: 'กรุณากรอกชื่อของคุณ', en: 'Enter your full name', zh: '请输入您的全名', ja: 'フルネームを入力してください' },
   'label-phone': { th: 'เบอร์โทรศัพท์', en: 'Phone Number', zh: '电话号码', ja: '電話番号' },
   'placeholder-phone': { th: 'กรุณากรอกเบอร์โทรศัพท์', en: 'Enter your phone number', zh: '请输入您的电话号码', ja: '電話番号を入力してください' },
   'label-msg': { th: 'ข้อความหรือคำถาม', en: 'Message / Special Requests', zh: '留言 / 特殊要求', ja: 'メッセージ / 特別なリクエスト' },
   'placeholder-msg': { th: 'สอบถามเรื่องการจอง หรือแพ็กเกจหมู่คณะ...', en: 'Inquire about glamping reservations or group tours...', zh: '咨询露营预订或团体旅游...', ja: 'グランピング予約や団体ツアーについて問い合わせる...' },
-  'btn-send': { th: 'ส่งข้อมูลติดต่อ', en: 'Submit Inquiry', zh: '提交咨询', ja: 'お問い合わせを送信' },
+  'btn-send': { th: '📩 ส่งข้อมูลติดต่อ', en: 'Submit Inquiry', zh: '提交咨询', ja: 'お問い合わせを送信' },
   'map-placeholder-title': { th: 'แผนที่นำทาง Google Maps', en: 'Google Maps Navigation', zh: 'Google 地图导航', ja: 'Google マップ ナビゲーション' },
   'map-placeholder-desc': { th: 'คลิกปุ่มด้านล่างเพื่อเปิดแผนที่ในมือถือนำทางมายังฟาร์มทันที', en: 'Click the button below to navigate to the farm via Google Maps', zh: '点击下方按钮通过 Google 地图导航至农场', ja: '下のボタンをクリックしてGoogleマップで牧場へのナビを開く' },
-  'btn-open-map': { th: 'เปิด Google Maps นำทาง', en: 'Navigate with Google Maps', zh: '使用 Google 地图导航', ja: 'Google マップでナビゲート' },
+  'btn-open-map': { th: '📍 เปิดแผนที่นำทางมาฟาร์ม', en: 'Navigate with Google Maps', zh: '使用 Google 地图导航', ja: 'Google マップでナビゲート' },
 
   // Modal stats translation
   'modal-stat-breed': { th: 'สายพันธุ์', en: 'Breed', zh: '品种', ja: '品種' },
@@ -561,7 +561,7 @@ function initContactForm() {
     .then(() => {
       const successMsg = currentLanguage === 'th'
         ? `📬 ส่งคำถามของคุณเรียบร้อยแล้ว!\nขอบคุณคุณ ${name} ที่สนใจฟาร์มแกะสตาร์ดอย เจ้าหน้าที่จะโทรติดต่อกลับที่เบอร์ ${phone} โดยเร็วที่สุด`
-        : `📬 Inquiry Sent Successfully!\nThank you ${name} for contacting Stardoi Sheep Farm. Our staff will call you back at ${phone} shortly.`;
+        : `📬 Inquiry Sent Successfully!\nThank you ${name} for contacting StardoiFarm Khaoyai. Our staff will call you back at ${phone} shortly.`;
       alert(successMsg);
       contactForm.reset();
     })
